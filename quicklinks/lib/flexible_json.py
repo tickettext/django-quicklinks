@@ -1,9 +1,11 @@
 from io import StringIO
+from simplejson import dumps
+
 from django.http import HttpResponseRedirect, HttpResponse,Http404
 from django.db.models import Model
 from django.db.models.query import QuerySet
 from django.utils.encoding import smart_unicode
-from django.utils.simplejson import dumps
+
 
 class UnableToSerializeError(Exception):
     """ Error for not implemented classes """
