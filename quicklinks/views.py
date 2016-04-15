@@ -12,7 +12,7 @@ from django.template import Context, Template
 def indexAlt(request):
 
     listed_groups = QuickLinkGroup.objects.all().order_by('id')#.values('title', 'group__title', 'group__url')
-    listed_links = QuickLink.objects.all().select_related('quicklinkgroup_id')
+    listed_links = QuickLink.objects.all().select_related('quicklinkgroup__id')
     #template = loader.get_template("index.html")
 
     context = {
@@ -29,6 +29,6 @@ def home(request):
 
 
 def links(request):
-    link_groups = QuickLinkGroup.objects.all().select_related('group_set').order_by('id')#gets list of objects
+    link_groups = QuickLinkGroup.objects.all().order_by('id')#gets list of objects
     response = link_groups
     return json_response_from(response, related=['group'], ignored = ['quicklinkgroup', 'quicklinkgroup_id'])

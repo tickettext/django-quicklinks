@@ -229,7 +229,7 @@ class JSONSerializer():
 #method to quickly implement the class above
 def json_response_from(response,**options):
     jsonSerializer = JSONSerializer()
-    return HttpResponse(jsonSerializer.serialize(response, use_natural_keys=True,**options), mimetype='application/json')
+    return HttpResponse(jsonSerializer.serialize(response, use_natural_keys=True,**options), content_type='application/json')
 
 
 #example use
