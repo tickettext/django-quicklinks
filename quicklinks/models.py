@@ -16,7 +16,7 @@ class QuickLinkGroup(Sortable):
     order_int = models.IntegerField()
 
     def groups_list(self):
-        group_list = QuickLinkGroup.objects.all().select_related('group_set').order_by('id').values('title', 'group__title', 'group__url')
+        group_list = QuickLinkGroup.objects.all().order_by('id').values('title', 'group__title', 'group__url')
         return group_list
 
 
