@@ -1,4 +1,3 @@
-from django.core.management import setup_environ
 from django import template
 #from quicklinks import settings
 from django.template import loader, Context
