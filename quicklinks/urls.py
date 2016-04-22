@@ -1,7 +1,4 @@
-try:
-    from django.conf.urls import patterns, url
-except ImportError:
-    from django.conf.urls.defaults import *
+from django.conf.urls import url
 from quicklinks import views 
 
 urlpatterns = [
